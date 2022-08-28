@@ -2,6 +2,7 @@
 #include<array>
 #include<vector>
 #include<deque>
+#include<list>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -11,7 +12,8 @@ using std::endl;
 
 //#define ARRAY
 //#define VECTOR
-#define DEQUEU
+//#define DEQUEU
+#define LIST
 
 
 
@@ -137,6 +139,60 @@ void main()
 
 
 #endif // DEQUEU
+
+
+#ifdef LIST
+
+
+	std::list<DataType>Mylist = { 5, 8, 13, 21, 52, 65, 85 };
+	for (std::list<DataType>::iterator it = Mylist.begin(); it != Mylist.end(); it++)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
+
+	int index, index2, value;
+	
+
+	cout << "Введите индекс для вставки значения: ";
+	do
+	{
+		cin >> index;
+		if (index < 0 || index > Mylist.size())
+		{
+			cout << "Вы ввели неправильный индекс" << endl;
+		}
+
+	} while (index < 0 || index > Mylist.size());
+	cout << "Введите добавляемое значение: "; cin >> value;
+
+	std::list<DataType>::iterator pos = Mylist.begin();
+	for (int i = 0; i < index; i++)pos++;
+	Mylist.insert(pos, value);
+	for (std::list<DataType>::iterator it = Mylist.begin(); it != Mylist.end(); it++)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
+	
+
+
+	cout << "Введитe индекс для удаления значения: "; cin >> index2;
+	std::list<DataType>::iterator pos2 = Mylist.begin();
+	for (int i = 0; i < index2; i++)pos2++;
+	Mylist.erase(pos2);
+	for (std::list<DataType>::iterator it = Mylist.begin(); it != Mylist.end(); it++)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
+
+
+
+
+#endif // LIST
+
+
 
 
 
