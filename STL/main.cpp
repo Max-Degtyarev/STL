@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<array>
 #include<vector>
 #include<deque>
@@ -83,9 +83,9 @@ void main()
 	cout << "Size:\t " << vec.size() << endl;
 	cout << "MaxSize:  " << vec.max_size() << endl;
 
-	//vec.shrink_to_fit(); // óìåíüøàåò Capasity äî ôàêòè÷åñêîã ðàçìåðà
-	vec.resize(8); // Ïðèíóäèòåëüíî çàäàåò ðàçìåð vectora
-	vec.reserve(55); // Çàäàåò Capasity vectora, ðàáîòàåò òîëüêî íà óâåëè÷åíèå
+	//vec.shrink_to_fit(); // ÑƒÐ¼ÐµÐ½ÑŒÑˆÐ°ÐµÑ‚ Capasity Ð´Ð¾ Ñ„Ð°ÐºÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð³ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð°
+	vec.resize(8); // ÐŸÑ€Ð¸Ð½ÑƒÐ´Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð·Ð°Ð´Ð°ÐµÑ‚ Ñ€Ð°Ð·Ð¼ÐµÑ€ vectora
+	vec.reserve(55); // Ð—Ð°Ð´Ð°ÐµÑ‚ Capasity vectora, Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð½Ð° ÑƒÐ²ÐµÐ»Ð¸Ñ‡ÐµÐ½Ð¸Ðµ
 
 	//vec.assign({ 1024, 2048, 3072, 4096, 5120 });
 	for (int i : vec)cout << i << tab; cout << endl;
@@ -96,8 +96,8 @@ void main()
 
 	int index;
 	int value;
-	cout << "Ââåäèòå èíäåêñ äîáàâëÿåìîãî ýëåìåíòà: "; cin >> index;
-	cout << "Ââåäèòå çíà÷åíèå äîáàâëÿåìîãî ýëåìåíòà: "; cin >> value;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: "; cin >> index;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: "; cin >> value;
 
 	//std::vector<DataType>::iterator position = vec.begin() + index;
 	if (index <= vec.size())
@@ -154,17 +154,17 @@ void main()
 	int index, index2, value;
 	
 
-	cout << "Ââåäèòå èíäåêñ äëÿ âñòàâêè çíà÷åíèÿ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð´Ð»Ñ Ð²ÑÑ‚Ð°Ð²ÐºÐ¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";
 	do
 	{
 		cin >> index;
 		if (index < 0 || index > Mylist.size())
 		{
-			cout << "Âû ââåëè íåïðàâèëüíûé èíäåêñ" << endl;
+			cout << "Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð¸Ð½Ð´ÐµÐºÑ" << endl;
 		}
 
 	} while (index < 0 || index > Mylist.size());
-	cout << "Ââåäèòå äîáàâëÿåìîå çíà÷åíèå: "; cin >> value;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value;
 
 	std::list<DataType>::iterator pos = Mylist.begin();
 	for (int i = 0; i < index; i++)pos++;
@@ -177,7 +177,7 @@ void main()
 	
 
 
-	cout << "Ââåäèòe èíäåêñ äëÿ óäàëåíèÿ çíà÷åíèÿ: "; cin >> index2;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚e Ð¸Ð½Ð´ÐµÐºÑ Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: "; cin >> index2;
 	std::list<DataType>::iterator pos2 = Mylist.begin();
 	for (int i = 0; i < index2; i++)pos2++;
 	Mylist.erase(pos2);
@@ -197,7 +197,7 @@ void main()
 
 
 	//int x = 1;
-	//int& y = x;	//îáúÿâëÿåì ññûëêó íà êîíñòàíòó
+	//int& y = x;	//Ð¾Ð±ÑŠÑÐ²Ð»ÑÐµÐ¼ ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð° ÐºÐ¾Ð½ÑÑ‚Ð°Ð½Ñ‚Ñƒ
 	//y += 7;
 	//cout << x << endl;
 	//x <<= 1;
