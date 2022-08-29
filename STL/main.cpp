@@ -3,6 +3,7 @@
 #include<vector>
 #include<deque>
 #include<list>
+#include<iterator>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -13,7 +14,8 @@ using std::endl;
 //#define ARRAY
 //#define VECTOR
 //#define DEQUEU
-#define LIST
+//#define MY_LIST
+#define CLASS_LIST
 
 
 
@@ -141,7 +143,7 @@ void main()
 #endif // DEQUEU
 
 
-#ifdef LIST
+#ifdef MY_LIST
 
 
 	std::list<DataType>Mylist = { 5, 8, 13, 21, 52, 65, 85 };
@@ -204,6 +206,37 @@ void main()
 
 
 
+#ifdef CLASS_LIST
+
+	std::list<int> list = { 3, 5, 8, 13, 21 };
+	for (std::list<int>::iterator it = list.begin(); it != list.end(); it++)
+	{
+		cout << *it << tab;
+	}
+	cout << endl;
+	int index;
+	int value;
+	cout << "Введите индекс добавляемого элемента: "; cin >> index;
+	cout << "Введите значение добавляемого элемента: "; cin >> value;
+	std::list<int>::iterator position = list.begin();
+	//for (int i = 0; i < index; i++)position++;
+	std::advance(position, index);
+	list.insert(position, value);
+	for (int i : list)cout << i << tab; cout << endl;
+
+
+#endif // CLASS_LIST
+
+
+		
+
+
+
+
+
+
+
+
 
 
 	//int x = 1;
@@ -213,6 +246,11 @@ void main()
 	//x <<= 1;
 	//cout << x << endl;
 	//cout << (x << 1) << endl;
+
+
+
+
+
 
 
 
