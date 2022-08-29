@@ -166,9 +166,19 @@ void main()
 	} while (index < 0 || index > Mylist.size());
 	cout << "Введите добавляемое значение: "; cin >> value;
 
-	std::list<DataType>::iterator pos = Mylist.begin();
-	for (int i = 0; i < index; i++)pos++;
-	Mylist.insert(pos, value);
+	if (index <= Mylist.size() / 2)
+	{
+		std::list<DataType>::iterator pos = Mylist.begin();
+		for (int i = 0; i < index; i++)pos++;
+		Mylist.insert(pos, value);
+	}
+	else
+	{
+		std::list<DataType>::iterator pos = Mylist.end();
+		for (int i = 0; i < (Mylist.size() - index); i++)pos--;
+		Mylist.insert(pos, value);
+
+	}
 	for (std::list<DataType>::iterator it = Mylist.begin(); it != Mylist.end(); it++)
 	{
 		cout << *it << tab;
