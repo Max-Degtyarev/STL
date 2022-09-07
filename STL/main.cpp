@@ -208,7 +208,7 @@ void main()
 
 #ifdef CLASS_LIST
 
-	std::list<int> list = { 3, 5, 8, 13, 21 };
+	std::list<int> list = { 3, 5, 8, 13, 21 }; 
 	for (std::list<int>::iterator it = list.begin(); it != list.end(); it++)
 	{
 		cout << *it << tab;

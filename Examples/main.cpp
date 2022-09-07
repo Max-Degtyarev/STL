@@ -2,21 +2,22 @@
 using namespace std;
 
 
-class Foo
+
+//#define EXM1
+
+
+int Sum(int *n, int *m)
 {
 
-public:
-	int x;
-	int y;
+	*n += 5;
+	*m += 8;
+
+	return *n + *m;
 
 
-};
+}
 
 
-
-
-//#define EXM_1
-#define EXM_2
 
 
 void main()
@@ -24,35 +25,77 @@ void main()
 
 	setlocale(LC_ALL, "");
 
-#ifdef EXM_1
+
+	
+
+	//int n = 10;
+	//
+	//while (n != 0)
+	//{
+	//	cout << n << endl;
+	//	n--;
+
+	//}
 
 
-	int x = 0;
-	int y = 0;
-	if (x++ && y++)
+#ifdef EXM1
+	int n;
+	cout << "Введите номер заказа: ";
+
+	do
 	{
-		y += 2;
-	}
-	cout << x + y << endl;
+		cin >> n;
+		if (n < 5 || n > 10)
+		{
+			cout << "Вы ввели неправильный номер!" << endl;
+
+		}
 
 
-#endif // EXM_1
+	} while (n < 5 || n > 10);
 
-
-#ifdef EXM_2
-
-	Foo r;
-	if (&r.x < &r.y)
-	{
-
-		cout << "Я программист" << endl;
-
-	}
-#endif // EXM_2
+	cout << "Вы ввели правильный номер" << endl;
+#endif // EXM1
 
 
 
 
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	cout << i << endl;
+
+
+	//}
+
+
+
+
+
+
+
+	
+
+	int n = 10;
+	int m = 7;
+
+	cout << "n = " << n << endl;
+	cout << "m = " << m << endl;
+
+	cout << Sum(&n, &m) << endl;
+
+	cout << "n = " << n << endl;
+	cout << "m = " << m << endl;
+
+
+//	int* pointer = &n;
+//
+//	cout << pointer << endl;
+//
+//	cout << *pointer << endl;
+//
+//
+//
 
 
 }
+
